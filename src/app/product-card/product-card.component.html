@@ -1,0 +1,12 @@
+<section>
+  <h2> {{productDetail.name}}</h2>
+  <p> ${{productDetail.price}}: {{productDetail.description}} </p>
+  <div>
+    <a [routerLink]="['/products', productDetail.id]">More Details</a>
+  </div>
+  @if (!disableAddButton) {
+  <div>
+    <button (click)="addProduct()">Add Product to List</button>
+  </div>
+  }
+</section>
