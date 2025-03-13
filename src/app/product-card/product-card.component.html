@@ -1,8 +1,9 @@
 <section>
+  <a [routerLink]="['/products', productDetail.id]">
   <h2> {{productDetail.name}}</h2>
+  </a>
   <p> ${{productDetail.price}}: {{productDetail.description}} </p>
   <div>
-    <a [routerLink]="['/products', productDetail.id]">More Details</a>
   </div>
   @if (!disableAddButton) {
   <div>

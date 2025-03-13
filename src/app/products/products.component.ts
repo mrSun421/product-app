@@ -4,6 +4,11 @@ import { ProductDetail } from '../product-detail';
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from '../product-card/product-card.component';
 
+/**
+  * This component is the page when routing to the /products page.
+  * In this component, when a user clicks the add product button, it adds it to the list, without duplication.
+  */
+
 @Component({
   selector: 'app-products',
   imports: [CommonModule, ProductCardComponent],

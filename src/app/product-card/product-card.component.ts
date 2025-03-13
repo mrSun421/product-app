@@ -3,6 +3,12 @@ import { ProductDetail } from '../product-detail';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+/**
+ * This component takes a ProductDetail interface, then displays the name, price, and details of the product.
+ * In addition, there is an button that emits the ProductDetail that is part of this.
+ * This button can optionally be disabled for read only purposes.
+  */
+
 @Component({
   selector: 'app-product-card',
   imports: [CommonModule, RouterModule],
