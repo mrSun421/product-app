@@ -16,12 +16,12 @@ import { ProductCardComponent } from '../product-card/product-card.component';
   styleUrl: './products.component.css'
 })
 export class ProductsComponent {
-  productService: ProductService = inject(ProductService);
-  productDetailList: ProductDetail[] = [];
+  private productService: ProductService = inject(ProductService);
+  productDetailList$ = this.productService.getAllProductDetails();
 
   constructor() {
-    this.productDetailList = this.productService.getAllProductDetails();
   }
+
   products = new Array<ProductDetail>();
   addProduct(productDetail: ProductDetail) {
     let productsIds = this.products.map((pr) => pr.id);

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ProductDetail } from './product-detail';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,12 @@ export class ProductService {
       description: "asdfjkadsf"
     },
   ];
-  getAllProductDetails(): ProductDetail[] {
-    return this.productDetailList;
+  getAllProductDetails(): Observable<ProductDetail[]> {
+    let observableDetails: Observable<ProductDetail[]> = new Observable((subscriber) => {
+      subscriber.next(this.productDetailList);
+      subscriber.complete();
+    });
+    return observableDetails;
   }
   getProductDetailById(id: number): ProductDetail | undefined {
     return this.productDetailList.find((productDetail) => productDetail.id === id);

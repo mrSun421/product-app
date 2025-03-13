@@ -2,6 +2,6 @@
   <ul>
     <li *ngFor="let product of products">{{product.name}}</li>
   </ul>
-  <app-product-card (addProductEvent)="addProduct($event)" *ngFor="let productDetail of productDetailList"
+  <app-product-card (addProductEvent)="addProduct($event)" *ngFor="let productDetail of productDetailList$ | async"
     [productDetail]="productDetail"></app-product-card>
 </section>
